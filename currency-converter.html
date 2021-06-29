@@ -1,57 +1,65 @@
 <h1>Currency Converter</h1>
 
-<div class="currency-from-list" style="width:500px;">
-  <select class="cur-from">
-    <option value="sel">Select currency:</option>
-    <option value="AUD">Austrailian Dollar - AUD</option>
-    <option value="CAD">Canadian Dollar - CAD</option>
-    <option value="CNH">Yuan Renminbi(?) - CNH(CNY?)</option>
-    <option value="DKK">Danish Krone - DKK</option>
-    <option value="EUR">Euro - EUR</option>
-    <option value="GBP">British Pound - GBP</option>
-    <option value="HKD">Hong Kong Dollar - HKD</option>
-    <option value="IDR">Rupiah - IDR</option>
-    <option value="INR">Indian Rupee - INR</option>
-    <option value="JPY">Japanese Yen - JPY</option>
-    <option value="MXN">Mexican Peso - MXN</option>
-    <option value="MYR">Malaysian Ringgit - MYR</option>
-    <option value="NZD">New Zealand Dollar - NZD</option>
-    <option value="RUB">Russian Ruble - RUB</option>
-    <option value="SGD">Singaporean Dollar - SGD</option>
-    <option value="THB">Baht - THB</option>
-    <option value="TWD">New Taiwan Dollar - TWD</option>
-    <option value="USD">American Dollar - USD</option>
-    <option value="VND">Dong - VND</option>
-  </select>
+<div class="container">
+  <header>
+    <h1>Web Experiment Lab</h1>
+  </header>
+  
+  <div class="currency-from-div" style="width:500px;">
+    <select class="cur-from">
+      <option value="sel">Select currency:</option>
+      <option value="AUD">Austrailian Dollar - AUD</option>
+      <option value="CAD">Canadian Dollar - CAD</option>
+      <option value="CNH">Yuan Renminbi(?) - CNH(CNY?)</option>
+      <option value="DKK">Danish Krone - DKK</option>
+      <option value="EUR">Euro - EUR</option>
+      <option value="GBP">British Pound - GBP</option>
+      <option value="HKD">Hong Kong Dollar - HKD</option>
+      <option value="IDR">Rupiah - IDR</option>
+      <option value="INR">Indian Rupee - INR</option>
+      <option value="JPY">Japanese Yen - JPY</option>
+      <option value="MXN">Mexican Peso - MXN</option>
+      <option value="MYR">Malaysian Ringgit - MYR</option>
+      <option value="NZD">New Zealand Dollar - NZD</option>
+      <option value="RUB">Russian Ruble - RUB</option>
+      <option value="SGD">Singaporean Dollar - SGD</option>
+      <option value="THB">Baht - THB</option>
+      <option value="TWD">New Taiwan Dollar - TWD</option>
+      <option value="USD">American Dollar - USD</option>
+      <option value="VND">Dong - VND</option>
+    </select>
+  
+    <input type="number" class="conv-rate-input" placeholder="from">
+  </div>
+
+  <div class="currency-to-div" style="width:500px;">
+    <select class="cur-to">
+      <option value="sel">Select currency:</option>
+      <option value="AUD">Austrailian Dollar - AUD</option>
+      <option value="CAD">Canadian Dollar - CAD</option>
+      <option value="CNH">Yuan Renminbi(?) - CNH(CNY?)</option>
+      <option value="DKK">Danish Krone - DKK</option>
+      <option value="EUR">Euro - EUR</option>
+      <option value="GBP">British Pound - GBP</option>
+      <option value="HKD">Hong Kong Dollar - HKD</option>
+      <option value="IDR">Rupiah - IDR</option>
+      <option value="INR">Indian Rupee - INR</option>
+      <option value="JPY">Japanese Yen - JPY</option>
+      <option value="MXN">Mexican Peso - MXN</option>
+      <option value="MYR">Malaysian Ringgit - MYR</option>
+      <option value="NZD">New Zealand Dollar - NZD</option>
+      <option value="RUB">Russian Ruble - RUB</option>
+      <option value="SGD">Singaporean Dollar - SGD</option>
+      <option value="THB">Baht - THB</option>
+      <option value="TWD">New Taiwan Dollar - TWD</option>
+      <option value="USD">American Dollar - USD</option>
+      <option value="VND">Dong - VND</option>
+    </select>
+  
+    <input type="number" class="conv-rate-output" placeholder="to">
+  </div>
+  
+  <div class="button-div">
+    <button class="convert-button">Convert</button>
+  </div>
 </div>
-
-<input type="number" class="conv-rate-input" placeholder="from">
-
-<div class="currency-to-list" style="width:500px;">
-  <select class="cur-to">
-    <option value="sel">Select currency:</option>
-    <option value="AUD">Austrailian Dollar - AUD</option>
-    <option value="CAD">Canadian Dollar - CAD</option>
-    <option value="CNH">Yuan Renminbi(?) - CNH(CNY?)</option>
-    <option value="DKK">Danish Krone - DKK</option>
-    <option value="EUR">Euro - EUR</option>
-    <option value="GBP">British Pound - GBP</option>
-    <option value="HKD">Hong Kong Dollar - HKD</option>
-    <option value="IDR">Rupiah - IDR</option>
-    <option value="INR">Indian Rupee - INR</option>
-    <option value="JPY">Japanese Yen - JPY</option>
-    <option value="MXN">Mexican Peso - MXN</option>
-    <option value="MYR">Malaysian Ringgit - MYR</option>
-    <option value="NZD">New Zealand Dollar - NZD</option>
-    <option value="RUB">Russian Ruble - RUB</option>
-    <option value="SGD">Singaporean Dollar - SGD</option>
-    <option value="THB">Baht - THB</option>
-    <option value="TWD">New Taiwan Dollar - TWD</option>
-    <option value="USD">American Dollar - USD</option>
-    <option value="VND">Dong - VND</option>
-  </select>
-</div>
-
-<button class="convert-button">Convert</button>
-
-<div class="conv-rate-output">Conversion result</div>
