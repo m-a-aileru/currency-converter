@@ -1,10 +1,55 @@
 body { 
-  background: #00000f;
-  color: white;
+  background: white;
+  color: DodgerBlue;
 }
 
-.conv-rate-output {
-  border: 2px solid white;
-  color: white;
+.container {
+  border: 1px solid DodgerBlue;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
 }
 
+.currency-from-div, .currency-to-div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+  
+}
+
+.cur-from, .cur-to {
+  width: 75%;
+  background-color: DodgerBlue;
+  color: white;
+  font-size: 24px;
+  border: none;
+  margin-right: 2em;
+  padding: 0.5em;
+}
+
+.conv-rate-input, .conv-rate-output {
+  width: 50%;
+  color: DodgerBlue;
+  font-size: 24px;
+}
+
+.button-div {
+  width: 50%;
+  margin: 1.5rem;
+}
+
+.button-div button {
+  width: 100%;
+  padding: 0.5em;
+  border: none;
+  background-color: rgba(0, 0, 255, 0.5);
+  color: white;
+  font-size: 18px;
+}
+
+.button-div button:hover {
+  background-color: rgba(0, 0, 255, 1);
+  cursor: pointer;
+} 
