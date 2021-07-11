@@ -1,55 +1,323 @@
-body { 
-  background: white;
-  color: DodgerBlue;
+/* Default styling (mobile first) */
+
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background: white;
+    color: black;
+    overflow-x: hidden;
 }
 
 .container {
-  border: 1px solid DodgerBlue;
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   /*
+  
+    margin: auto;
+*/
 }
 
 .currency-from-div, .currency-to-div {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1em;
-  
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20% 0;
+
+    
+    /*
+    
+    border: 1px solid black;  
+    
+    height: 33vh;
+    */
+    
+}
+.currency-from-div {
+    /*background: #184981;*/
+    background: black;
+}
+.currency-to-div {
+    /*background: #7eafe7;*/
+    background: white;
 }
 
 .cur-from, .cur-to {
-  width: 75%;
-  background-color: DodgerBlue;
-  color: white;
-  font-size: 24px;
-  border: none;
-  margin-right: 2em;
-  padding: 0.5em;
+/*
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    border: none;
+    
+*/
+    width: 50%;
+    border: none;
+    font-size: 4.75vmin;
+    padding: 1em 0;
+    color: white;
+}
+.cur-from {
+    background: rgba(255, 255, 255, 0.1);
+}
+.cur-to {
+    background: rgba(0, 0, 0, 0.1);
+}
+.cur-from option, .cur-to option {
+ /*   background: rgba(0, 0, 0, 0.1);*/ 
+    
+}
+.cur-from option {
+    background: #184981;
+}
+.cur-to option {
+    background: #7eafe7;
 }
 
 .conv-rate-input, .conv-rate-output {
-  width: 50%;
-  color: DodgerBlue;
-  font-size: 24px;
+    width: 20%;
+    font-size: 5vmin;
+    text-align: center;
 }
+
 
 .button-div {
-  width: 50%;
-  margin: 1.5rem;
+    /* border: 1px solid black;    
+   width: 100%;*/
+    display: flex;
+    justify-content: center;
+    /*
+    height: 33vh;
+    
+    */   
+    margin-top: 5rem;
+}
+.button-div button {
+    width: 65%;
+    padding: 0.75em;
+    border: none;
+    background: #0b223d;
+    color: white;
+    font-size: 6vmin;
+    /*margin-top: 1.5rem;*/
 }
 
-.button-div button {
-  width: 100%;
-  padding: 0.5em;
-  border: none;
-  background-color: rgba(0, 0, 255, 0.5);
-  color: white;
-  font-size: 18px;
+.button-div button:active {
+    background: white;
+    color:  #0b223d;
 }
+
+/* save this for laptop/desktop breakpoints 
+.button-div button:hover {
+    background: dodgerblue;
+    color:  #0b223d;
+}
+*/
+
+/*
+
+
+.cur-from, .cur-to {
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    border: none;
+    padding: 0.5em 1em;
+}
+
+.cur-from {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.cur-to {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.cur-from option, .cur-to option {
+    padding: 20em;
+    font-size: 18px;
+} 
+
+.cur-from option {
+    background: rgb(24, 73, 129);
+    color: white;
+}
+
+.cur-to option {
+    background: rgb(126, 175, 231);
+    color: white;
+}
+
+.conv-rate-input, .conv-rate-output {
+    width: 50%;
+    border: none;
+    color: #184981;
+    font-size: 24px;
+}
+/*
+.conv-rate-input {
+}
+
+.conv-rate-output {
+}
+*/
+/*
+
+
 
 .button-div button:hover {
-  background-color: rgba(0, 0, 255, 1);
-  cursor: pointer;
+    background: #040c16;
+    cursor: pointer;
+}
+*/
+
+@media only screen and (min-width: 450px) and (orientation: landscape) {
+    .currency-from-div, .currency-to-div {
+        padding: 2.5% 0;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (orientation: portrait) {
+    body {
+        background: yellow;    
+    }
+
+    .currency-from-div {
+        background: #b3b300;
+    }   
+    .currency-to-div {
+        background: #ffffcc;
+    }
+
+    .cur-from, .cur-to {
+        width: 73%;
+        font-size: 3.5vmin;
+        padding: 0.65em 0;
+    }
+
+    .conv-rate-input, .conv-rate-output {
+        width: 13%;
+        font-size: 4vmin;
+        
+    }
+
+    .button-div button {
+        padding: 0.65em;
+        font-size: 4.5vmin;
+    }
+    
+}
+
+@media only screen and (min-width: 600px) and (orientation: landscape) {
+    .currency-from-div, .currency-to-div {
+        padding: 3% 0;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    body {
+        background: green;    
+    }
+
+    .currency-from-div, .currency-to-div {
+        
+    }
+    .currency-from-div {
+        background: #003300;
+    }   
+    .currency-to-div {
+        background: #ccffcc;
+    }
+
+    .cur-from, .cur-to {
+        
+        padding: 0.5em 0;
+    }
+
+    .conv-rate-input, .conv-rate-output {
+        font-size: 3.5vmin;
+    }
+
+    .button-div button {
+        width: 75%;
+        padding: 0.5em;
+        font-size: 4vmin;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    body {
+        background: blue;    
+    }
+
+    .container {
+        width: 100%;
+        flex-flow: row wrap;
+    }
+
+    .currency-from-div, .currency-to-div {
+        width: 50%;
+        padding: 10% 0;
+    }
+
+    .currency-from-div {
+        background: #184981;
+    }
+    .currency-to-div {
+        background: #7eafe7;
+    }
+
+    .cur-from, .cur-to {
+        width: 60%;
+        font-size: 2.5vmin;
+    }
+
+    .conv-rate-input, .conv-rate-output {
+        font-size: 3vmin;
+    }
+
+    .button-div {
+        width: 100%;
+    }
+    .button-div button {
+        width: 50%;
+        padding: 1em;
+        font-size: 2.5vmin;
+    }
+    .button-div button:hover {
+        background: dodgerblue;
+        color: #0b223d;
+        cursor: pointer;
+    }
+    .button-div button:active {
+        background: white;
+        color: dodgerblue;
+    }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    body {
+        background: pink;    
+    }
 } 
+
+/* Testing out orientations... 
+@media only screen and (orientation: portrait) {
+    body {
+      background-color: lightgreen;
+    }
+}
+
+
+@media only screen and (orientation: landscape) {
+    body {
+      background-color: lightblue;
+    }
+}*/
