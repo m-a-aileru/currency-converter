@@ -3,20 +3,25 @@ let curTo = document.querySelector(".cur-to");
 let convRateInput = document.querySelector(".conv-rate-input");
 let convRateOutput = document.querySelector(".conv-rate-output");
 let convButton = document.querySelector(".convert-button");
+let swapButton = document.querySelector(".swap-button");
+// let currencyDivs = document.querySelector(".currency-divs");
+let curFromDiv = document.querySelector(".currency-from-div");
+let curToDiv = document.querySelector(".currency-to-div");
+let from = "", to = "";
 
-async function getConversionRate() {
-  let from = curFrom.value.toLowerCase();
-  let to = curTo.value.toLowerCase();
-  let quantity = Number(convRateInput.value);
-  let baseUrl = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${from}/${to}.json`;
+// Not exactly when or how to use this function yet...
+
+// async function getConversionRate() {
+//   from = curFrom.value;
+//   to = curTo.value;
+//   let quantity = Number(convRateInput.value);
+//   let baseUrl = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${from}/${to}.json`;
+//   let response = await fetch(baseUrl);
+//   let dataJson = await response.json();
+//   let resultingRate = dataJson[to] * quantity;
   
-  let response = await fetch(baseUrl);
-  let dataJson = await response.json();
-  
-  let resultingRate = dataJson[to] * quantity;
-  
-  return resultingRate;
-}
+//   return resultingRate;
+// }
 
 curFrom.addEventListener("input", () => {
   console.log(curFrom.value);
@@ -26,79 +31,90 @@ curTo.addEventListener("input", () => {
   console.log(curTo.value);
 })
 
-/*
-convRateInput.addEventListener("input", async () => {
-  //convRateOutput.textContent = convert(curFrom.value, curTo.value, convRateInput.value);
-  let from = curFrom.value.toLowerCase();
-  let to = curTo.value.toLowerCase();
-  let quantity = Number(convRateInput.value);
-  let baseUrl = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${from}/${to}.json`;
-  // might need to convert 'convRateInput' into a number
-  
-  let response = await fetch(baseUrl);
-  let dataJson = await response.json();
-  
-  let resultingRate = dataJson[to] * quantity;
-  
-  convRateOutput.value = resultingRate.toFixed(2);
-  //////////////////////////////////////////////
-  convRateInput.addEventListener("change", () => {
-    //console.log(convRateInput.value);
-     convRateOutput.value = convRateInput.value;
-})
-})
-*/
-
-
-
-
-/*
-convRateInput.addEventListener("change", async () => {
-  //convRateOutput.textContent = convert(curFrom.value, curTo.value, convRateInput.value);
-  let from = curFrom.value.toLowerCase();
-  let to = curTo.value.toLowerCase();
-  let quantity = Number(convRateInput.value);
-  let baseUrl = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${from}/${to}.json`;
-  
-  let response = await fetch(baseUrl);
-  let dataJson = await response.json();
-  
-  let resultingRate = dataJson[to] * quantity
-  
-//  convRateOutput.value = resultingRate.toFixed(2);
-  console.log(resultingRate.toFixed(2));
-  convRateInput.addEventListener("change", () => {
-    //console.log(convRateInput.value);
-     convRateOutput.value = convRateInput.value;
-})
-})
-*/
-// start to test something out here but haven't quite finished it yet
-convRateInput.addEventListener("change", () => {
-    //console.log(convRateInput.value);
-     convRateOutput.value = convRateInput.value;
-})
+// convRateInput.addEventListener("change", () => {
+//     if (convRateInput.value < 0) {
+//       convRateOutput.value = 0;
+//     }
+// })
 
 convButton.addEventListener("click", async () => {
-  //convRateOutput.textContent = convert(curFrom.value, curTo.value, convRateInput.value);
-  let from = curFrom.value.toLowerCase();
-  let to = curTo.value.toLowerCase();
+  from = curFrom.value;
+  to = curTo.value;  
   let quantity = Number(convRateInput.value);
-  let baseUrl = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${from}/${to}.json`;
-  // might need to convert 'convRateInput' into a number
-  
+  let baseUrl = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${from}/${to}.json`; 
   let response = await fetch(baseUrl);
   let dataJson = await response.json();
-  
   let resultingRate = dataJson[to] * quantity;
   
-  convRateOutput.value = resultingRate.toFixed(2);
-  //console.log(resultingRate.toFixed(2));
+  if (convRateInput.value > 0) {
+    convRateOutput.value = resultingRate.toFixed(2);
+  } else {
+    convRateOutput.value = 0;
+  }
 })
+ 
+/* for use with testing "currency swap" feature
 
-
+swapButton.addEventListener("click", () => {
+    /*
+    for (let i = 0; i < curFrom.options.length; i++) {
+        if (curFrom.options[i].selected) {
+            console.log(curFrom.options[i].text);
+        }
+    }
+    */
+  //  let temp = "";
 /*
-convButton.addEventListener("click", () => {
-  getConversionRate().then(response => response.json()).then(json => console.log(json));
-})
-*/
+    for (let i = 0; i < curFrom.options.length; i++) {
+        /*
+        if (curFrom.options[i].selected) {
+            console.log(curFrom.options[i].text);
+      //      curTo.options[i].text = curFrom.options[i].text
+        }
+
+    }
+    
+
+    for (let j = 0; j < curTo.options.length; j++) {
+        if (curTo.options[j].selected) {
+            console.log(curTo.options[j].text);
+        }
+    }
+    */
+    /*
+ currencyDivs.style.flexDirection = "row-reverse";
+    for (let i = 0; i < curFrom.options.length; i++) {
+      if (curFrom.options[i].selected) {
+          for (let j = 0; j < curTo.options.length; j++) {
+              if (curTo.options[j].selected) {
+                  console.log(curFrom.options[i].text);
+                  console.log(curTo.options[j].text);
+                  currencyDivs.style.flexDirection = "row-reverse";
+                  if (currencyDivs.style.flexDirection === "row-reverse") {
+                    currencyDivs.style.flexDirection = "row";
+                  }
+              }
+          }       
+      }
+  }
+    */
+  //  if (curFromDiv.style.order === "1" && curToDiv.style.order === "2") {
+  //   curFromDiv.style.order = "2";
+  //   curToDiv.style.order = "1";
+    /*
+    from = curTo.value;
+    to = curFrom.value;
+    */
+  //   convRateInput.value = 0;
+  //   convRateOutput.value = 0;
+  //  } else {
+  //   curFromDiv.style.order = "1";
+  //   curToDiv.style.order = "2";
+    /*
+    from = curFrom.value;
+    to = curTo.value;
+    */
+  //  }
+   
+    
+// })
