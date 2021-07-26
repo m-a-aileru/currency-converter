@@ -1,11 +1,10 @@
 /* Default styling (mobile first) */
 
-
 body {
-    box-sizing: border-box;
+    box-sizing: border-box; 
     margin: 0;
     padding: 0;
-    background: white;
+    background: #d4e4f7;
     color: black;
     overflow-x: hidden;
 }
@@ -15,10 +14,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-   /*
-  
-    margin: auto;
-*/
 }
 
 /* for use with testing "currency swap" feature
@@ -31,25 +26,19 @@ body {
     display: flex;
     flex-direction: row-reverse; 
     */
-
 .currency-from-div, .currency-to-div {
     width: 100%;
     padding: 12.5% 0;
-    
-    /* border: 1px solid black;   */
-    /* height: 33vh; */
-    
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
 }
 .currency-from-div {
-    /*background: #184981;*/
-    background: black;
+    background: #0b223d
 }
 .currency-to-div {
-    /*background: #7eafe7;*/
-    background: white;
+    /* background: dodgerblue; */
+    background: #246dc2;
 }
 
 .cur-from, .cur-to {
@@ -58,15 +47,13 @@ body {
     font-size: 4.65vmin;
     padding: 1em 0.25em;
     color: white;
+    font-family: 'Trebuchet MS', sans-serif;
 }
 .cur-from {
     background: rgba(255, 255, 255, 0.1);
 }
 .cur-to {
     background: rgba(0, 0, 0, 0.1);
-}
-.cur-from option, .cur-to option {
- /*   background: rgba(0, 0, 0, 0.1);*/ 
 }
 .cur-from option {
     background: #184981;
@@ -76,13 +63,23 @@ body {
 }
 
 .conv-rate-div {
-    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
-    /* margin-top: 1rem; */
-    
+}
+.conv-rate-input, .conv-rate-output {
+    font-family: 'Trebuchet MS', sans-serif;
 }
 
+/* Removal of number input/output arrows - Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Removal of number input/output arrows - Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 .conv-rate-input, .conv-rate-output {
     width: 50%;
     font-size: 5vmin;
@@ -91,17 +88,9 @@ body {
     /* margin-top: 1rem; - makes the value bar look "deformed" when side-by-side with dropdown menu */
 }
 
-
 .button-div {
-     /* border: 1px solid black;     */
-   /* width: 100%;*/ 
     display: flex;
     justify-content: center;
-    /*
-    height: 33vh;
-    
-    */   
-    /* margin-top: 5rem; */
 }
 .button-div button {
     width: 65%;
@@ -109,59 +98,40 @@ body {
     border: none;
     background: #0b223d;
     color: white;
+    font-family: 'Trebuchet MS', sans-serif;
     font-size: 6vmin;
     /*margin-top: 1.5rem;*/
 }
-
 .button-div button:active {
     background: white;
     color:  #0b223d;
 }
 
 /* BREAKPOINTS */
-/* @media only screen and (min-width: 450px) and (orientation: landscape) {
-    .currency-from-div, .currency-to-div {
-        padding: 2.5% 0;
-    }
-
-    .cur-from, .cur-to {
-        padding: 0.25em 0;
-        font-size: 5vmin;
-    }
-
-    .button-div {
-        margin-top: 2rem;
-    }
- 
-    .button-div button {
-        width: 60%;
-        padding: 1em;
-        
-     
-    } 
-} */
 
 /* Devices less than 600px in landscape orientation */
 @media only screen and (orientation: landscape) {
-    body {
+    /* body {
         background: grey;    
-    }
+    } */
 
     .currency-from-div, .currency-to-div {
         padding: 4% 0;
-        flex-flow: row wrap;
+        flex-flow: row nowrap;
+        /* margin: auto; */
+        /* justify-content: center; */
     }
 
     .cur-from, .cur-to {
-        width: 50%;
-        font-size: 4vmin;
-        
+        width: 60%;
+        font-size: 4.5vmin;
+        margin-left: 2.5rem;
     }
 
     .conv-rate-input, .conv-rate-output {
-        /* width: 10%; */
-        font-size: 4vmin; 
+        font-size: 4.5vmin; 
         padding: auto;
+        margin-left: 0.5rem;
     }
 
     .button-div button {
@@ -171,25 +141,16 @@ body {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) and (orientation: portrait) {
-    body {
+    /* body {
         background: yellow;    
-    }
-
-    .currency-from-div {
-        background: #b3b300;
-    }   
-    .currency-to-div {
-        background: #ffffcc;
-    }
+    } */
 
     .cur-from, .cur-to {
-        /* width: 80%; */
         font-size: 4vmin;
         padding: 0.5em 0;
     }
 
     .conv-rate-input, .conv-rate-output {
-        /* width: 30%; */
         font-size: 4vmin; 
         padding: 0.5em;
     }
@@ -202,107 +163,50 @@ body {
 }
 
 @media only screen and (min-width: 600px) and (orientation: landscape) {
-    body {
+    /* body {
         background: yellow;    
-    }
-
-    /* .currency-from-div, .currency-to-div {
-        padding: 4% 0;
-        flex-flow: row wrap;
-    }
-
-    .cur-from, .cur-to {
-        width: 50%;
-        font-size: 4vmin;
-        
-    }
-
-    .conv-rate-input, .conv-rate-output {
-        
-        font-size: 4vmin; 
-        padding: auto;
-    }
-
-    .button-div button {
-        padding: 0.65em;
     } */
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (orientation: portrait) {
-    body {
-        /* background: green;     */
+    /* body {
         background: brown;
-    }
+    }*/
 
-    .currency-from-div, .currency-to-div {
-        /* flex-flow: column wrap; */
-        /* justify-content: center; */
-    }
-
-    .cur-from, .cur-to {
-        /* width: 70%; */
+    .cur-from, .cur-to { 
         font-size: 3.75vmin;
-        /* margin: auto; */
     }
 }
 
 @media only screen and (min-width: 768px) and (orientation: landscape) {
-    body {
+    /* body {
         background: green;    
     }
-
-    /* .cur-from, .cur-to {
-        width: 91%;   
-        
-    } */
-/* 
-    .currency-from-div, .currency-to-div {
-        
-        
-    }
-    .currency-from-div {
-        background: #003300;
-    }   
-    .currency-to-div {
-        background: #ccffcc;
-    }
-
-    .cur-from, .cur-to {
-        
-        
-    }
-
-    .conv-rate-input, .conv-rate-output {
-        height: 0.25em;
-        font-size: 4vmin;
-        margin-top: 1.5rem;
-    }
-
+    */
     .button-div button {
         width: 50%;
         padding: 0.5em;
         font-size: 5vmin;
-    } */
+    } 
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) and (orientation: portrait) {
-    body {
+    /* body {
         background: blue;    
-    }    
+    }     */
 
     .currency-from-div, .currency-to-div {
         width: 100%;
         padding: 20% 0;
     }
-
     .currency-from-div {
         background: #184981;
         /*order: 2;*/
     }
     .currency-to-div {
-        background: #7eafe7;
+        background: #246dc2;
         /*order: 1;*/
     }
 
@@ -312,34 +216,32 @@ body {
     }
 
     .conv-rate-input, .conv-rate-output {
-        /* width: 25%; */
         font-size: 3vmin;
     }
-/* /* 
-    .button-div {
-        width: 100%;
-    } */
+
     .button-div button {
         width: 60%;
         padding: 1em;
         font-size: 3vmin;
     }
     .button-div button:hover {
-        background: dodgerblue;
-        color: #0b223d;
+        /* background: dodgerblue; */
+        background: #246dc2;
+        color: #040c16;
         cursor: pointer;
     }
     .button-div button:active {
         background: white;
-        color: dodgerblue;
+        /* color: dodgerblue; */
+        color: #246dc2;
     }
 
 }
 
 @media only screen and (min-width: 992px) and (orientation: landscape) {
-    body {
+    /* body {
         background: blue;    
-    }  
+    }   */
 
     .container {
         flex-flow: row wrap;
@@ -356,6 +258,7 @@ body {
         width: 100%;
         padding: 1em 0;
         font-size: 3vmin;
+        margin: 0;
     }
 
     .conv-rate-input, .conv-rate-output {
@@ -377,21 +280,23 @@ body {
         
     }
     .button-div button:hover {
-        background: dodgerblue;
-        color: #0b223d;
+        /* background: dodgerblue; */
+        background: #246dc2;
+        color: #040c16;
         cursor: pointer;
     }
     .button-div button:active {
         background: white;
-        color: dodgerblue;
+        color: #246dc2;
+        /* color: dodgerblue; */
     }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-    body {
+    /* body {
         background: pink;    
-    }
+    } */
 
     .button-div {
         margin-top: 4rem;
