@@ -15,3 +15,4 @@ conversion rate input bar or as soon as the input value is changed, so there's a
 button
 - Implement "currency swap" feature (make the conversion rates able to swap places and convert accurately)
 - Enable limited cryptocurrency conversion
+- Addition of necessary accessibility features
